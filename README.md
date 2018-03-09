@@ -1,15 +1,16 @@
-# Projeto-3-UC-SO
+# Projeto-2-UC-SO
+
+
 
 Project for de UC of Operating Systems of LEIC IST (2º year)
 
-Meant to test knowledge of multithread programming using the POSIX library and a library for communication between each thread, and the usage of locks and pthread_cond, shared memory mechanisms 
-
-Students were also tasked with making a makeshift pthread_barrier
+Meant to test knowledge of multithread programming using the POSIX library and a library for communication between each thread, and the usage of locks and pthread_cond
 
 Made in groups of two students, with the lovely Carolina Carreira (https://github.com/CarolinaCC)
 
 More information in the file enunciado.pdf (only in Portuguese)
 
-Note: files leQueue.h, leQueue.c, matrix2d.c, matrix2d.h were already given
+Note: files leQueue.h, leQueue.c, matrix2d.c, matrix2d.h, mp3lib.c, mp3lib.h were already given
+	Job was to change file mp3lib.c
 	
-
+	See https://github.com/MiguelVBarros/Projeto-1-UC-SO to see the difference
