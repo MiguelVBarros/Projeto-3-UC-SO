@@ -6,6 +6,8 @@ Meant to test knowledge of multithread programming using the POSIX library and a
 
 Students were also tasked with making a makeshift pthread_barrier
 
+Made in groups of two students, with the lovely Carolina Carreira (https://github.com/CarolinaCC)
+
 More information in the file enunciado.pdf (only in Portuguese)
 
 Note: files leQueue.h, leQueue.c, matrix2d.c, matrix2d.h were already given
