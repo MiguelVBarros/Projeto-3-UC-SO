@@ -1,5 +1,5 @@
 /*
-// Bibliotece de matrizes 2D alocadas dinamicamente, versao 3
+// Bibliotece de matrizes 2D alocadas dinamicamente, versao 1
 // Sistemas Operativos, DEI/IST/ULisboa 2017-18
 */
 
@@ -14,24 +14,23 @@
 ---------------------------------------------------------------------*/
 
 DoubleMatrix2D* dm2dNew(int lines, int columns) {
-  int i, j;
-  DoubleMatrix2D* matrix = malloc(sizeof(DoubleMatrix2D));
-
-  if (matrix == NULL)
-    return NULL;
-
-  matrix->n_l = lines;
-  matrix->n_c = columns;
-  matrix->data = (double*) malloc(sizeof(double)*lines*columns);
-  if (matrix->data == NULL) {
-    free (matrix);
-    return NULL;
+  DoubleMatrix2D*  matrix = malloc(sizeof(DoubleMatrix2D));
+  int           i, j;
+  
+  if (matrix) {
+    matrix->n_l = lines;
+    matrix->n_c = columns;
+    matrix->data = (double*) malloc(sizeof(double)*lines*columns);
+    if (!matrix->data) {
+      free (matrix);
+      return 0;
+    }
   }
-
-  for (i=0; i<lines; i++) 
-    for (j=0; j<columns; j++)
+  
+  for (i=0; i<matrix->n_l; i++) 
+    for (j=0; j<matrix->n_c; j++)
       dm2dSetEntry(matrix, i, j, 0);
-
+  
   return matrix;
 }
 
@@ -96,13 +95,13 @@ void dm2dCopy (DoubleMatrix2D *to, DoubleMatrix2D *from) {
 | Function: dm2dPrint
 ---------------------------------------------------------------------*/
 
-void dm2dPrint (DoubleMatrix2D *matrix) {
+void         dm2dPrint (DoubleMatrix2D *matrix) {
   int i, j;
 
   printf ("\n");
   for (i=0; i<matrix->n_l; i++) {
     for (j=0; j<matrix->n_c; j++)
-      printf(" %8.4f", dm2dGetEntry(matrix, i, j));
+      printf("%10.6f  ", dm2dGetEntry(matrix, i, j));
     printf ("\n");
   }
 }
